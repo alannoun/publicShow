@@ -1,0 +1,40 @@
+import React from "react";
+import { StyleSheet } from "react-native";
+import { styles } from "./ProductDetail.styles";
+import { Card, Text, Paragraph } from "react-native-paper";
+
+import {
+  //ProductCard,
+  Title,
+} from "./LeaderBoardCard.styles";
+
+export const LeaderBoardDetail = ({ user = {} }) => {
+  console.log(user)
+  const {
+    id = "0",
+    name = "Product Name",
+    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    photos = "https://via.placeholder.com/500",
+    price = "$100",
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus mi eget bibendum facilisis. In interdum felis eget est bibendum.",
+    rating = 4,
+    isOutofSctock = false,
+    
+  } = user;
+
+ 
+
+  return (
+    <Card elevation={5} style={styles.card}>
+      <Card.Cover
+        key={id}
+        style={styles.cover}
+        source={{ photos }}
+      ></Card.Cover>
+      <Title> Name: {name}</Title>
+      <Paragraph> Description: {description}</Paragraph>
+      <Title> Price: {price}</Title>
+    </Card>
+  );
+};
+
